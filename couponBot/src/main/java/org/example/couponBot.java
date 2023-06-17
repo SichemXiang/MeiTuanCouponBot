@@ -21,8 +21,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.json.JSONObject;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class couponBot {
@@ -32,7 +30,7 @@ public class couponBot {
     private static final String JS_FILE_PATH = "./mt.js";
     private static final String LOG_FILE_PATH = "./log.txt";
 
-    private static List<String> signDatas = new ArrayList<>();
+    private static final List<String> signDatas = new ArrayList<>();
 
     private static String cookie;
     private static String couponReferId;
@@ -126,7 +124,7 @@ public class couponBot {
 
             // 输出结果
             System.out.println("Exit Code: " + exitCode);
-            System.out.println("Result: " + result.toString());
+            System.out.println("Result: " + result);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

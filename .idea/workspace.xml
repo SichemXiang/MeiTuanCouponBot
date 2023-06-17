@@ -43,7 +43,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Application.couponBot">
@@ -80,7 +80,7 @@
       <updated>1686516110534</updated>
       <workItem from="1686516111825" duration="167000" />
       <workItem from="1686555761741" duration="595000" />
-      <workItem from="1687024424741" duration="5398000" />
+      <workItem from="1687024424741" duration="6044000" />
     </task>
     <task id="LOCAL-00001" summary="线程运行出错">
       <created>1687029170966</created>
