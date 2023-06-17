@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b0415e1-27c8-4fd2-95aa-0361c187663a" name="Changes" comment="" />
+    <list default="true" id="7b0415e1-27c8-4fd2-95aa-0361c187663a" name="Changes" comment="线程运行出错">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,8 +80,16 @@
       <updated>1686516110534</updated>
       <workItem from="1686516111825" duration="167000" />
       <workItem from="1686555761741" duration="595000" />
-      <workItem from="1687024424741" duration="4644000" />
+      <workItem from="1687024424741" duration="5398000" />
     </task>
+    <task id="LOCAL-00001" summary="线程运行出错">
+      <created>1687029170966</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687029170966</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +105,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="线程运行出错" />
+    <option name="LAST_COMMIT_MESSAGE" value="线程运行出错" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
