@@ -20,6 +20,9 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.json.JSONObject;
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Function;
+import org.mozilla.javascript.ScriptableObject;
 
 import javax.script.ScriptException;
 
@@ -70,6 +73,7 @@ public class couponBot {
         maxCount = config.getInt("maxCount");
         startTimeStr = config.getString("startTime");
         leadTime = config.getLong("leadTime");
+
     }
 
     private static void loadCookie() throws IOException {
@@ -84,52 +88,40 @@ public class couponBot {
         cookie = cookieBuilder.toString();
     }
 
-    private static String readFileContent(String filePath) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
-        StringBuilder contentBuilder = new StringBuilder();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            contentBuilder.append(line);
-        }
-        reader.close();
 
-        return contentBuilder.toString();
-    }
 
     private static void generateSignDatas(String JS_FILE_PATH) throws ScriptException {
         String req = "{\"couponReferId\":\"" + couponReferId + "\",\"gdPageId\":\"" + gdPageId + "\",\"pageId\":\""
                 + pageId + "\",\"instanceId\":\"" + instanceId + "\"}";
+        // 创建 JavaScript 引擎上下文
+        Context context = Context.enter();
 
         try {
-            // 构建Node.js命令和JavaScript文件路径
-            String nodeCommand = "node";
+            ScriptableObject scope = context.initStandardObjects();
+            FileReader fileReader = new FileReader(JS_FILE_PATH);
+            context.evaluateReader(scope, fileReader, JS_FILE_PATH, 1, null);
+            fileReader.close();
 
-            // 创建ProcessBuilder
-            ProcessBuilder processBuilder = new ProcessBuilder(nodeCommand, JS_FILE_PATH, req);
-            processBuilder.redirectErrorStream(true);
-
-            // 启动进程
-            Process process = processBuilder.start();
-
-            // 读取进程输出
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String output;
-            StringBuilder result = new StringBuilder();
-            while ((output = reader.readLine()) != null) {
-                result.append(output);
+            // 获取函数对象
+            Object functionObj = scope.get("signReq", scope);
+            if (functionObj instanceof Function) {
+                Function signReqFunction = (Function) functionObj;
+                // 调用函数并将结果存入signDatas列表
+                Object result = signReqFunction.call(context, scope, scope, new Object[] { req });
+                signDatas.add(Context.toString(result));
+            } else {
+                System.out.println("signReq is not a function");
             }
-
-            // 等待进程执行完毕
-            int exitCode = process.waitFor();
-
-            // 输出结果
-            System.out.println("Exit Code: " + exitCode);
-            System.out.println("Result: " + result);
-        } catch (IOException | InterruptedException e) {
+        } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            Context.exit();
         }
 
-
+        // 打印结果
+        for (String signData : signDatas) {
+            System.out.println(signData);
+        }
     }
 
     private static void start() {
@@ -166,7 +158,6 @@ public class couponBot {
                 }
             });
         }
-
         executorService.shutdown();
     }
 
