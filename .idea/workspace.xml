@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b0415e1-27c8-4fd2-95aa-0361c187663a" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/couponBot/couponBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/couponBot/couponBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/couponBot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/couponBot/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/couponBot/src/main/java/org/example/couponBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/couponBot/src/main/java/org/example/couponBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/couponBot/target/classes/org/example/couponBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/couponBot/target/classes/org/example/couponBot.class" afterDir="false" />
-    </list>
+    <list default="true" id="7b0415e1-27c8-4fd2-95aa-0361c187663a" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +79,7 @@
       <workItem from="1686516111825" duration="167000" />
       <workItem from="1686555761741" duration="595000" />
       <workItem from="1687024424741" duration="6257000" />
-      <workItem from="1687076361314" duration="10801000" />
+      <workItem from="1687076361314" duration="11099000" />
     </task>
     <task id="LOCAL-00001" summary="线程运行出错">
       <created>1687029170966</created>
@@ -102,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687031242872</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1687093873507</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687093873511</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
